@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import Spinner from "../component/Spinner";
+import CoinChart from "../component/CoinChart";
 const API_URL = import.meta.env.VITE_COIN_API_URL;
 
 const CoinDeailsPage = () => {
@@ -64,6 +65,9 @@ const CoinDeailsPage = () => {
                 {""} ({coin.market_data.price_change_percentage_24h.toFixed(2)}{" "}
                 %)
               </h4>
+            </div>
+            <div>
+              <CoinChart coinId={coin.id} />
             </div>
           </>
         )}
